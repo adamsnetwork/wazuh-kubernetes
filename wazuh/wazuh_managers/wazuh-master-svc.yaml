@@ -18,8 +18,10 @@ metadata:
   annotations:
     # domainName: 'changeme'
     service.beta.kubernetes.io/aws-load-balancer-backend-protocol: tcp
+    metallb.io/allow-shared-ip: wazuh
 spec:
   type: LoadBalancer
+  loadBalancerIP: 10.10.10.12
   selector:
     app: wazuh-manager
     node-type: master

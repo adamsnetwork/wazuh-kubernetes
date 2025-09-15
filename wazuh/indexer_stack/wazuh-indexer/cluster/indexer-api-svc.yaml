@@ -14,8 +14,11 @@ metadata:
   namespace: wazuh
   labels:
     app: wazuh-indexer
+  annotations:
+    metallb.io/allow-shared-ip: wazuh
 spec:
   type: LoadBalancer
+  loadBalancerIP: 10.10.10.12
   selector:
     app: wazuh-indexer
   ports:

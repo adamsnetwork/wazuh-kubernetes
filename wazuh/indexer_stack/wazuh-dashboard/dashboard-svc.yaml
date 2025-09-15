@@ -20,8 +20,10 @@ metadata:
     # service.beta.kubernetes.io/aws-load-balancer-ssl-cert: 'changeme'
     service.beta.kubernetes.io/aws-load-balancer-ssl-ports: '443'
     service.beta.kubernetes.io/aws-load-balancer-backend-protocol: https
+    metallb.io/allow-shared-ip: wazuh
 spec:
   type: LoadBalancer
+  loadBalancerIP: 10.10.10.12
   selector:
     app: wazuh-dashboard
   ports:
